@@ -71,7 +71,7 @@ export function ArticleForm({ existing }: { existing?: Article }) {
   return (
     <form onSubmit={handleSave} className="flex flex-col gap-5 max-w-2xl">
       {error && (
-        <div className="border border-stamp/40 bg-stamp/5 text-stamp text-sm rounded-sm px-4 py-3">
+        <div className="border border-orange/40 bg-orange/5 text-orange text-sm rounded-sm px-4 py-3">
           {error}
         </div>
       )}
@@ -144,7 +144,7 @@ export function ArticleForm({ existing }: { existing?: Article }) {
             type="button"
             onClick={handleDelete}
             disabled={deleting}
-            className="font-utility text-xs uppercase tracking-wider text-stamp hover:underline disabled:opacity-50"
+            className="font-utility text-xs uppercase tracking-wider text-orange hover:underline disabled:opacity-50"
           >
             {deleting ? "Deleting…" : "Delete"}
           </button>

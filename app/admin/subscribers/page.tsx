@@ -45,11 +45,11 @@ export default async function SubscribersPage() {
                   <td className="px-4 py-3 text-ink-soft">{formatDate(s.created_at)}</td>
                   <td className="px-4 py-3">
                     {s.role === "admin" ? (
-                      <span className="font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm bg-stamp/15 text-stamp">
+                      <span className="font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm bg-orange/15 text-orange">
                         Admin
                       </span>
                     ) : (
-                      <span className="font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm bg-forest/15 text-forest">
+                      <span className="font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm bg-teal/15 text-teal">
                         Member
                       </span>
                     )}

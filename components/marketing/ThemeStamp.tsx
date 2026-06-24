@@ -1,7 +1,7 @@
 import { THEME_FRAMEWORKS } from "@/types/database";
 
 const ROTATIONS = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-2", "rotate-1"];
-const COLORS = ["text-stamp", "text-forest", "text-tan", "text-stamp", "text-forest", "text-tan"];
+const COLORS = ["text-orange", "text-teal", "text-tan", "text-orange", "text-teal", "text-tan"];
 
 export function ThemeStamp({ theme, index }: { theme: string; index: number }) {
   const acronym = THEME_FRAMEWORKS[theme];

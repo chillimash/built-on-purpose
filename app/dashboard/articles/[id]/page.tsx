@@ -19,7 +19,7 @@ export default async function ArticleDetailPage({
     <article>
       <Link
         href="/dashboard/articles"
-        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-stamp"
+        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-orange"
       >
         ← Articles
       </Link>

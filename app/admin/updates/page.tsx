@@ -26,7 +26,7 @@ export default async function AdminUpdatesPage() {
         <h1 className="font-display text-3xl font-semibold text-ink">Field Notes</h1>
         <Link
           href="/admin/updates/new"
-          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-stamp transition-colors"
+          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-orange transition-colors"
         >
           + New field note
         </Link>
@@ -46,7 +46,7 @@ export default async function AdminUpdatesPage() {
               className="group py-4 border-b border-tan/25 flex items-center justify-between gap-4"
             >
               <div className="min-w-0">
-                <p className="font-display text-lg text-ink group-hover:text-stamp transition-colors truncate">
+                <p className="font-display text-lg text-ink group-hover:text-orange transition-colors truncate">
                   {u.title}
                 </p>
                 <p className="text-xs text-ink-soft mt-0.5">
@@ -59,7 +59,7 @@ export default async function AdminUpdatesPage() {
                   <span
                     className={`font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm ${
                       emailSentIds.has(u.id)
-                        ? "bg-forest/15 text-forest"
+                        ? "bg-teal/15 text-teal"
                         : "bg-tan/20 text-ink-soft"
                     }`}
                   >

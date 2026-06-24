@@ -1,11 +1,11 @@
 import { THEME_FRAMEWORKS } from "@/types/database";
 
 const THEME_COLORS: Record<string, string> = {
-  "Personal Responsibility": "text-stamp",
-  "Purpose-Driven Living": "text-forest",
+  "Personal Responsibility": "text-orange",
+  "Purpose-Driven Living": "text-teal",
   "Character Before Achievement": "text-tan",
-  "Growth Through Adversity": "text-stamp",
-  "Legacy and Generational Impact": "text-forest",
+  "Growth Through Adversity": "text-orange",
+  "Legacy and Generational Impact": "text-teal",
   "Faith-Based Wisdom Applied Practically": "text-tan",
 };
 

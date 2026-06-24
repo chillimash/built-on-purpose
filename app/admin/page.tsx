@@ -58,7 +58,7 @@ export default async function AdminOverviewPage() {
           <Link
             key={s.label}
             href={s.href}
-            className="border border-tan/30 bg-paper-dim rounded-sm p-6 hover:border-stamp/50 transition-colors"
+            className="border border-tan/30 bg-paper-dim rounded-sm p-6 hover:border-orange/50 transition-colors"
           >
             <p className="font-utility text-xs uppercase tracking-wider text-ink-soft mb-3">
               {s.label}
@@ -74,7 +74,7 @@ export default async function AdminOverviewPage() {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/admin/updates/new"
-          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-stamp transition-colors"
+          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-orange transition-colors"
         >
           + New field note
         </Link>

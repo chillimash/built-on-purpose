@@ -3,6 +3,7 @@
 import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 import { signInWithGoogle, signInWithPassword } from "@/lib/supabase/auth";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -50,11 +51,7 @@ function LoginForm() {
       <div className="w-full max-w-md">
         {/* Header / mark */}
         <div className="mb-10 text-center">
-          <Link href="/" className="inline-block">
-            <span className="font-utility text-xs uppercase tracking-[0.2em] text-ink-soft">
-              Built On Purpose
-            </span>
-          </Link>
+          <Logo variant="full" size="md" href="/" />
           <h1 className="mt-3 font-display text-3xl font-semibold text-ink">
             Welcome back
           </h1>
@@ -66,12 +63,12 @@ function LoginForm() {
         {/* Card */}
         <div className="bg-paper-dim border border-tan/30 rounded-sm p-8 relative">
           {/* corner stamp mark */}
-          <div className="absolute -top-3 -right-3 stamp text-stamp text-[10px] bg-paper">
+          <div className="absolute -top-3 -right-3 stamp text-orange text-[10px] bg-paper">
             Member
           </div>
 
           {error && (
-            <div className="mb-5 border border-stamp/40 bg-stamp/5 text-stamp text-sm rounded-sm px-4 py-3">
+            <div className="mb-5 border border-orange/40 bg-orange/5 text-orange text-sm rounded-sm px-4 py-3">
               {error}
             </div>
           )}
@@ -122,7 +119,7 @@ function LoginForm() {
 
         <p className="mt-6 text-center text-sm text-ink-soft">
           New here?{" "}
-          <Link href="/signup" className="text-ink font-semibold underline underline-offset-4 hover:text-stamp">
+          <Link href="/signup" className="text-ink font-semibold underline underline-offset-4 hover:text-orange">
             Create an account
           </Link>
         </p>

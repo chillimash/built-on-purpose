@@ -17,7 +17,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={ref}
           id={id}
-          className={`bg-cream border border-tan/40 rounded-sm px-4 py-3 text-ink focus:border-stamp outline-none transition-colors ${className}`}
+          className={`bg-cream border border-tan/40 rounded-sm px-4 py-3 text-ink focus:border-orange outline-none transition-colors ${className}`}
           {...props}
         >
           {children}

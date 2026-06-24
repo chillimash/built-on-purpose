@@ -31,7 +31,7 @@ export default async function MasterclassDetailPage({
     <article>
       <Link
         href="/dashboard/masterclasses"
-        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-stamp"
+        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-orange"
       >
         ← Masterclasses
       </Link>

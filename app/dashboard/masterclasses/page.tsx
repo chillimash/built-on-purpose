@@ -34,7 +34,7 @@ export default async function MasterclassesPage() {
         <div className="flex flex-col gap-12">
           {upcomingLive.length > 0 && (
             <section>
-              <h2 className="font-utility text-xs uppercase tracking-wider text-stamp mb-4">
+              <h2 className="font-utility text-xs uppercase tracking-wider text-orange mb-4">
                 Upcoming live sessions
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

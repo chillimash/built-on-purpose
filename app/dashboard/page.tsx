@@ -41,7 +41,7 @@ export default async function DashboardPage() {
               </span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h2 className="font-display text-xl text-ink group-hover:text-stamp transition-colors">
+                  <h2 className="font-display text-xl text-ink group-hover:text-orange transition-colors">
                     {update.title}
                   </h2>
                   {update.theme && <Stamp theme={update.theme} />}

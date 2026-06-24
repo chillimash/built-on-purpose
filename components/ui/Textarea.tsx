@@ -17,7 +17,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           ref={ref}
           id={id}
-          className={`bg-cream border border-tan/40 rounded-sm px-4 py-3 text-ink placeholder:text-ink-soft/50 focus:border-stamp outline-none transition-colors resize-y ${className}`}
+          className={`bg-cream border border-tan/40 rounded-sm px-4 py-3 text-ink placeholder:text-ink-soft/50 focus:border-orange outline-none transition-colors resize-y ${className}`}
           {...props}
         />
       </div>

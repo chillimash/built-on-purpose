@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Logo } from "@/components/ui/Logo";
 import type { Profile } from "@/types/database";
 
 const links = [
@@ -16,9 +17,7 @@ export function DashboardNav({ profile }: { profile: Profile | null }) {
   return (
     <header className="border-b border-tan/30 bg-paper-dim sticky top-0 z-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <Link href="/dashboard" className="font-display font-semibold text-lg text-ink">
-          Built On Purpose
-        </Link>
+        <Logo variant="full" size="sm" href="/dashboard" />
 
         <nav className="hidden sm:flex items-center gap-6">
           {links.map((link) => {
@@ -30,7 +29,7 @@ export function DashboardNav({ profile }: { profile: Profile | null }) {
                 key={link.href}
                 href={link.href}
                 className={`font-utility text-xs uppercase tracking-wider transition-colors ${
-                  active ? "text-stamp" : "text-ink-soft hover:text-ink"
+                  active ? "text-teal" : "text-ink-soft hover:text-ink"
                 }`}
               >
                 {link.label}
@@ -43,7 +42,7 @@ export function DashboardNav({ profile }: { profile: Profile | null }) {
           {profile?.role === "admin" && (
             <Link
               href="/admin"
-              className="font-utility text-xs uppercase tracking-wider text-forest hover:text-ink hidden sm:inline"
+              className="font-utility text-xs uppercase tracking-wider text-teal hover:text-ink hidden sm:inline"
             >
               Admin →
             </Link>
@@ -51,7 +50,7 @@ export function DashboardNav({ profile }: { profile: Profile | null }) {
           <form action="/auth/signout" method="post">
             <button
               type="submit"
-              className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-stamp"
+              className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-orange"
             >
               Sign out
             </button>
@@ -70,7 +69,7 @@ export function DashboardNav({ profile }: { profile: Profile | null }) {
               key={link.href}
               href={link.href}
               className={`font-utility text-xs uppercase tracking-wider whitespace-nowrap ${
-                active ? "text-stamp" : "text-ink-soft"
+                active ? "text-teal" : "text-ink-soft"
               }`}
             >
               {link.label}

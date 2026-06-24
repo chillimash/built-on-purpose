@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 import { signInWithGoogle, signUpWithPassword } from "@/lib/supabase/auth";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -51,7 +52,7 @@ export default function SignupPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-16 paper-grain">
         <div className="w-full max-w-md text-center">
-          <div className="stamp text-forest text-xs mx-auto mb-6 inline-flex">
+          <div className="stamp text-teal text-xs mx-auto mb-6 inline-flex">
             Confirmed
           </div>
           <h1 className="font-display text-3xl font-semibold text-ink mb-3">
@@ -73,11 +74,7 @@ export default function SignupPage() {
     <div className="min-h-screen flex items-center justify-center px-4 py-16 paper-grain">
       <div className="w-full max-w-md">
         <div className="mb-10 text-center">
-          <Link href="/" className="inline-block">
-            <span className="font-utility text-xs uppercase tracking-[0.2em] text-ink-soft">
-              Built On Purpose
-            </span>
-          </Link>
+          <Logo variant="full" size="md" href="/" />
           <h1 className="mt-3 font-display text-3xl font-semibold text-ink">
             Start your journal
           </h1>
@@ -87,12 +84,12 @@ export default function SignupPage() {
         </div>
 
         <div className="bg-paper-dim border border-tan/30 rounded-sm p-8 relative">
-          <div className="absolute -top-3 -right-3 stamp text-forest text-[10px] bg-paper">
+          <div className="absolute -top-3 -right-3 stamp text-teal text-[10px] bg-paper">
             New
           </div>
 
           {error && (
-            <div className="mb-5 border border-stamp/40 bg-stamp/5 text-stamp text-sm rounded-sm px-4 py-3">
+            <div className="mb-5 border border-orange/40 bg-orange/5 text-orange text-sm rounded-sm px-4 py-3">
               {error}
             </div>
           )}
@@ -153,7 +150,7 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-sm text-ink-soft">
           Already a member?{" "}
-          <Link href="/login" className="text-ink font-semibold underline underline-offset-4 hover:text-stamp">
+          <Link href="/login" className="text-ink font-semibold underline underline-offset-4 hover:text-orange">
             Sign in
           </Link>
         </p>

@@ -95,3 +95,64 @@ npm run dev
 ## A note on email confirmation
 
 By default, Supabase requires email confirmation before someone can sign in with email/password. If you'd rather subscribers get instant access, go to **Authentication → Providers → Email** in Supabase and toggle off "Confirm email." Google sign-in is unaffected either way.
+
+
+---
+
+## Image uploads (Supabase Storage)
+
+**Run the storage migration:**
+
+After running `0001_init.sql`, go back to the Supabase SQL Editor and run `supabase/migrations/0002_storage.sql`. This creates the `images` bucket with a 5 MB file size limit and the correct RLS policies (admins can upload; everyone can view).
+
+That's it. Image uploads in the admin forms will work automatically once the bucket exists.
+
+**File limits:**
+- Formats: JPEG, PNG, WebP, GIF
+- Max size: 5 MB per file
+
+---
+
+## Email (Resend)
+
+**1. Create a Resend account**
+
+Go to [resend.com](https://resend.com) and sign up for a free account. The free tier allows 3,000 emails/month and 100/day — more than enough to start.
+
+**2. Add and verify your domain**
+
+In the Resend dashboard → **Domains** → **Add domain**. Add your domain (e.g. `builtonpurpose.com`) and follow the DNS instructions. This takes a few minutes to propagate.
+
+Until your domain is verified, you can test by using `onboarding@resend.dev` as the FROM address — but emails will only deliver to your own account's email, not to real subscribers.
+
+**3. Create an API key**
+
+Resend dashboard → **API Keys** → **Create API Key**. Give it a name and copy the key (it's shown once).
+
+**4. Run the email log migration**
+
+In Supabase SQL Editor, run `supabase/migrations/0003_email_sends.sql`. This creates the `email_sends` table that prevents duplicate sends when you edit an already-published field note.
+
+**5. Add environment variables to Vercel**
+
+In your Vercel project → **Settings → Environment Variables**, add:
+
+| Name | Value |
+|---|---|
+| `RESEND_API_KEY` | `re_your_key_here` |
+| `FROM_EMAIL` | `Built On Purpose <notes@yourdomain.com>` |
+| `NEXT_PUBLIC_SITE_URL` | `https://your-app-name.vercel.app` (or your custom domain) |
+
+**6. Redeploy**
+
+Vercel auto-deploys when you push to GitHub. Trigger a manual redeploy from the Vercel dashboard after adding the env vars, or push any small change.
+
+**How it works:**
+- When you toggle a field note to **Published** and save, the API checks if an email has already been sent for that note.
+- If not, it sends to every subscriber with `subscribed = true`, in batches of 50.
+- The send is logged to `email_sends` — subsequent saves/edits to the same published note never re-send.
+- The admin field notes list shows a **✓ Email sent** badge next to each published note that has been sent.
+
+**Testing locally:**
+- Leave `RESEND_API_KEY` unset in your `.env.local` — the app will log a warning and skip sending silently. No errors thrown.
+- To test a real send locally, add your Resend API key to `.env.local` and set `FROM_EMAIL=onboarding@resend.dev` (Resend's test address, delivers only to your own inbox).

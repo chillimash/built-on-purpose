@@ -19,7 +19,7 @@ export default async function WeeklyUpdatePage({
     <article>
       <Link
         href="/dashboard"
-        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-stamp"
+        className="font-utility text-xs uppercase tracking-wider text-ink-soft hover:text-orange"
       >
         ← Field Notes
       </Link>

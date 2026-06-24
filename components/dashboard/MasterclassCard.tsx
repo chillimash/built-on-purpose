@@ -9,7 +9,7 @@ export function MasterclassCard({ mc }: { mc: Masterclass }) {
   return (
     <Link
       href={`/dashboard/masterclasses/${mc.id}`}
-      className="group block border border-tan/30 bg-paper-dim rounded-sm overflow-hidden hover:border-stamp/50 transition-colors"
+      className="group block border border-tan/30 bg-paper-dim rounded-sm overflow-hidden hover:border-orange/50 transition-colors"
     >
       <div className="aspect-video bg-ink/5 relative flex items-center justify-center overflow-hidden">
         {mc.thumbnail_url ? (
@@ -29,9 +29,9 @@ export function MasterclassCard({ mc }: { mc: Masterclass }) {
             className={`font-utility text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm ${
               mc.format === "live"
                 ? upcoming
-                  ? "bg-stamp text-paper"
+                  ? "bg-orange text-paper"
                   : "bg-ink-soft text-paper"
-                : "bg-forest text-paper"
+                : "bg-teal text-paper"
             }`}
           >
             {mc.format === "live" ? (upcoming ? "Upcoming live" : "Past live") : "Video"}
@@ -43,7 +43,7 @@ export function MasterclassCard({ mc }: { mc: Masterclass }) {
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           {mc.theme && <Stamp theme={mc.theme} />}
         </div>
-        <h3 className="font-display text-lg text-ink group-hover:text-stamp transition-colors leading-snug">
+        <h3 className="font-display text-lg text-ink group-hover:text-orange transition-colors leading-snug">
           {mc.title}
         </h3>
         {mc.format === "live" && mc.live_at && (

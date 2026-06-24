@@ -1,13 +1,12 @@
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
 export function MarketingNav() {
   return (
-    <header className="border-b border-tan/25">
+    <header className="border-b border-tan/25 bg-paper/90 backdrop-blur-sm sticky top-0 z-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <Link href="/" className="font-display font-semibold text-lg text-ink">
-          Built On Purpose
-        </Link>
+        <Logo variant="full" size="sm" href="/" />
         <div className="flex items-center gap-4">
           <Link
             href="/login"

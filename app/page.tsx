@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MarketingNav } from "@/components/marketing/MarketingNav";
+import { Logo } from "@/components/ui/Logo";
 import { ThemeStamp } from "@/components/marketing/ThemeStamp";
 import { Button } from "@/components/ui/Button";
 import { THEMES } from "@/types/database";
@@ -29,9 +30,9 @@ export default function Home() {
 
       {/* Hero */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-20 pb-16 text-center">
-        <span className="stamp text-stamp text-xs -rotate-2 inline-flex mb-8">
-          Est. for the long road
-        </span>
+        <div className="mb-8 flex justify-center">
+          <Logo variant="full" size="lg" href={null} />
+        </div>
         <h1 className="font-display text-4xl sm:text-5xl font-semibold text-ink leading-[1.1] tracking-tight">
           Awaken to your
           <br />

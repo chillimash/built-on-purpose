@@ -67,7 +67,7 @@ export function fieldNoteEmailHtml({
           ${theme ? `
           <tr>
             <td style="padding-top:28px;padding-bottom:8px;">
-              <span style="display:inline-block;border:1.5px solid #C44536;border-radius:9999px;padding:3px 12px;font-family:Courier New,monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#C44536;transform:rotate(-2deg);">
+              <span style="display:inline-block;border:1.5px solid #1F5C6B;border-radius:9999px;padding:3px 12px;font-family:Courier New,monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1F5C6B;transform:rotate(-2deg);">
                 ${theme}
               </span>
             </td>
@@ -76,7 +76,7 @@ export function fieldNoteEmailHtml({
           <!-- Title -->
           <tr>
             <td style="padding-bottom:20px;">
-              <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;font-weight:600;color:#1C1A17;line-height:1.25;">
+              <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;font-weight:600;color:#2D2926;line-height:1.25;">
                 ${title}
               </h1>
             </td>
@@ -88,11 +88,11 @@ export function fieldNoteEmailHtml({
               <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#564E42;line-height:1.7;">
                 ${greeting}
               </p>
-              <p style="margin:0 0 24px;font-family:Arial,sans-serif;font-size:15px;color:#1C1A17;line-height:1.75;">
+              <p style="margin:0 0 24px;font-family:Arial,sans-serif;font-size:15px;color:#2D2926;line-height:1.75;">
                 ${excerpt}
               </p>
               <a href="${readUrl}"
-                 style="display:inline-block;background-color:#1C1A17;color:#FAF6EE;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border-radius:2px;">
+                 style="display:inline-block;background-color:#1F5C6B;color:#FAF6EE;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border-radius:2px;">
                 Read the full note →
               </a>
             </td>

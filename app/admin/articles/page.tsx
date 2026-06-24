@@ -13,7 +13,7 @@ export default async function AdminArticlesPage() {
         <h1 className="font-display text-3xl font-semibold text-ink">Articles</h1>
         <Link
           href="/admin/articles/new"
-          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-stamp transition-colors"
+          className="font-utility text-xs uppercase tracking-wider bg-ink text-paper px-5 py-3 rounded-sm hover:bg-orange transition-colors"
         >
           + New article
         </Link>
@@ -30,7 +30,7 @@ export default async function AdminArticlesPage() {
               className="group py-4 border-b border-tan/25 flex items-center justify-between gap-4"
             >
               <div className="min-w-0">
-                <p className="font-display text-lg text-ink group-hover:text-stamp transition-colors truncate">
+                <p className="font-display text-lg text-ink group-hover:text-orange transition-colors truncate">
                   {a.title}
                 </p>
                 <p className="text-xs text-ink-soft mt-0.5">

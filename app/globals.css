@@ -2,18 +2,24 @@
 
 /* ============================================================
    Built On Purpose — Design Tokens
-   Field-notebook aesthetic: paper, ink, stamped accents.
+   Calibrated against the actual logo:
+   - "Built on" = charcoal serif (#2D2926)
+   - "on" = terracotta/burnt orange (#C45C2E)
+   - "PURPOSE" = deep teal (#1F5C6B)
+   - circle border = warm cream gold (#F0Dfab)
    ============================================================ */
 
 :root {
   /* Palette */
   --color-paper: #FAF6EE;       /* aged paper background */
-  --color-paper-dim: #F0E9D8;   /* slightly recessed paper, for cards/sections */
-  --color-ink: #1C1A17;         /* near-black ink/brown for text */
-  --color-ink-soft: #564E42;    /* secondary text, captions */
-  --color-tan: #8B6F4E;         /* worn leather / rule lines / borders */
-  --color-stamp: #C44536;       /* stamped red — sparing use, CTAs, accents */
-  --color-forest: #3D5A45;      /* growth green — secondary accent */
+  --color-paper-dim: #F0E9D8;   /* slightly recessed paper */
+  --color-ink: #2D2926;         /* charcoal — matches logo "Built on" text */
+  --color-ink-soft: #6B5F54;    /* secondary text, captions */
+  --color-tan: #8B6F4E;         /* worn leather / borders / rule lines */
+  --color-gold: #F0DFAB;        /* warm cream-gold — matches logo circle border */
+  --color-teal: #1F5C6B;        /* deep teal — matches logo "PURPOSE" */
+  --color-teal-soft: #2A7A8C;   /* lighter teal for hover states */
+  --color-orange: #C45C2E;      /* burnt orange — matches logo "on" accent */
   --color-cream: #FFFDF8;       /* lightest surface, inputs */
 }
 
@@ -23,9 +29,15 @@
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
   --color-tan: var(--color-tan);
-  --color-stamp: var(--color-stamp);
-  --color-forest: var(--color-forest);
+  --color-gold: var(--color-gold);
+  --color-teal: var(--color-teal);
+  --color-teal-soft: var(--color-teal-soft);
+  --color-orange: var(--color-orange);
   --color-cream: var(--color-cream);
+
+  /* Legacy aliases kept so existing Tailwind classes don't break */
+  --color-stamp: var(--color-orange);
+  --color-forest: var(--color-teal);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -37,7 +49,7 @@ body {
   color: var(--color-ink);
 }
 
-/* Subtle paper grain — very low opacity, never distracting */
+/* Subtle paper grain */
 .paper-grain {
   position: relative;
 }
@@ -50,7 +62,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Stamp / seal — the signature element. Used for theme badges and framework marks. */
+/* Stamp / seal — signature element for theme badges */
 .stamp {
   display: inline-flex;
   align-items: center;
@@ -65,9 +77,9 @@ body {
   transform: rotate(-2deg);
 }
 
-/* Visible keyboard focus, respected everywhere */
+/* Visible keyboard focus */
 :focus-visible {
-  outline: 2px solid var(--color-stamp);
+  outline: 2px solid var(--color-teal);
   outline-offset: 2px;
 }
 
@@ -80,16 +92,14 @@ body {
   }
 }
 
-/* Prose styling for rendered markdown content (updates, articles) */
+/* Prose styling for rendered markdown content */
 .prose-bop {
   font-family: var(--font-body);
   color: var(--color-ink);
   line-height: 1.75;
   max-width: 65ch;
 }
-.prose-bop p {
-  margin-bottom: 1.25em;
-}
+.prose-bop p { margin-bottom: 1.25em; }
 .prose-bop h1, .prose-bop h2, .prose-bop h3 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -108,7 +118,7 @@ body {
 .prose-bop ol { list-style-type: decimal; }
 .prose-bop li { margin-bottom: 0.4em; }
 .prose-bop blockquote {
-  border-left: 3px solid var(--color-stamp);
+  border-left: 3px solid var(--color-teal);
   padding-left: 1.2em;
   margin: 1.5em 0;
   font-style: italic;
@@ -116,7 +126,7 @@ body {
 }
 .prose-bop strong { font-weight: 700; color: var(--color-ink); }
 .prose-bop a {
-  color: var(--color-stamp);
+  color: var(--color-teal);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

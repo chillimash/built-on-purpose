@@ -7,7 +7,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/dashboard/articles/${article.id}`}
-      className="group block border border-tan/30 bg-paper-dim rounded-sm overflow-hidden hover:border-stamp/50 transition-colors"
+      className="group block border border-tan/30 bg-paper-dim rounded-sm overflow-hidden hover:border-orange/50 transition-colors"
     >
       <div className="aspect-[16/9] bg-ink/5 overflow-hidden">
         {article.cover_image_url ? (
@@ -30,7 +30,7 @@ export function ArticleCard({ article }: { article: Article }) {
             {formatDate(article.published_at ?? article.created_at)}
           </span>
         </div>
-        <h3 className="font-display text-lg text-ink group-hover:text-stamp transition-colors leading-snug">
+        <h3 className="font-display text-lg text-ink group-hover:text-orange transition-colors leading-snug">
           {article.title}
         </h3>
         {article.excerpt && (

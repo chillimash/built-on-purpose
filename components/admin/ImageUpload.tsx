@@ -77,14 +77,14 @@ export function ImageUpload({ label, currentUrl, onUpload }: ImageUploadProps) {
               <button
                 type="button"
                 onClick={() => inputRef.current?.click()}
-                className="font-utility text-xs uppercase tracking-wider bg-paper text-ink px-3 py-2 rounded-sm hover:bg-stamp hover:text-paper transition-colors"
+                className="font-utility text-xs uppercase tracking-wider bg-paper text-ink px-3 py-2 rounded-sm hover:bg-orange hover:text-paper transition-colors"
               >
                 Replace
               </button>
               <button
                 type="button"
                 onClick={handleClear}
-                className="font-utility text-xs uppercase tracking-wider bg-paper text-stamp px-3 py-2 rounded-sm hover:bg-stamp hover:text-paper transition-colors"
+                className="font-utility text-xs uppercase tracking-wider bg-paper text-orange px-3 py-2 rounded-sm hover:bg-orange hover:text-paper transition-colors"
               >
                 Remove
               </button>
@@ -96,7 +96,7 @@ export function ImageUpload({ label, currentUrl, onUpload }: ImageUploadProps) {
           type="button"
           onClick={() => inputRef.current?.click()}
           disabled={uploading}
-          className="border border-dashed border-tan/50 rounded-sm aspect-[16/9] flex flex-col items-center justify-center gap-2 hover:border-stamp/60 hover:bg-paper-dim transition-colors disabled:opacity-50"
+          className="border border-dashed border-tan/50 rounded-sm aspect-[16/9] flex flex-col items-center justify-center gap-2 hover:border-orange/60 hover:bg-paper-dim transition-colors disabled:opacity-50"
         >
           <span className="font-display text-3xl text-tan/50">↑</span>
           <span className="font-utility text-xs uppercase tracking-wider text-ink-soft">
@@ -118,7 +118,7 @@ export function ImageUpload({ label, currentUrl, onUpload }: ImageUploadProps) {
       />
 
       {error && (
-        <p className="text-xs text-stamp">{error}</p>
+        <p className="text-xs text-orange">{error}</p>
       )}
     </div>
   );
