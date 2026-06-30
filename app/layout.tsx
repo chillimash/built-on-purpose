@@ -24,10 +24,31 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://builtonpurpose.vercel.app";
+const SITE_TITLE = "Built On Purpose";
+const SITE_DESCRIPTION =
+  "Awaken to your God-given potential. Weekly field notes, masterclasses, and articles on responsibility, purpose, and character.";
+
 export const metadata: Metadata = {
-  title: "Built On Purpose",
-  description:
-    "Awaken to your God-given potential. Weekly field notes, masterclasses, and articles on responsibility, purpose, and character.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s · ${SITE_TITLE}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+    locale: "en_ZA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
